@@ -13,6 +13,10 @@ app.use(express.json());
 const dishesRoutes = require("./routes/dishes.js");
 const ordersRoutes = require("./routes/orders.js");
 
+// Use routes
+app.use("/api/dishes", dishesRoutes);
+app.use("/api/orders", ordersRoutes);
+
 // Health check endpoint
 app.get("/api/health", (req, res) => {
   res.json({
@@ -25,4 +29,6 @@ app.get("/api/health", (req, res) => {
 app.listen(PORT, () => {
   console.log(`Food ordering server running on http://localhost:${PORT}`);
   console.log(`Health check: http://localhost/${PORT}/api/health`);
+  console.log(`Dishes API: http://localhost/${PORT}/api/dishes`);
+  console.log(`Orders API: http://localhost/${PORT}/api/orders`);
 });
