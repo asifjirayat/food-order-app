@@ -1,0 +1,90 @@
+[
+  {
+    "id": 1,
+    "name": "Classic Burger",
+    "description": "Juicy beef patty with lettuce, tomato, and special sauce",
+    "price": 12.99,
+    "category": "burgers",
+    "image": "/images/burger.jpg",
+    "available": true
+  },
+  {
+    "id": 2,
+    "name": "Crispy Fries",
+    "description": "Golden crispy potato fries with sea salt",
+    "price": 5.99,
+    "category": "sides",
+    "image": "/images/fries.jpg",
+    "available": true
+  },
+  {
+    "id": 3,
+    "name": "Margherita Pizza",
+    "description": "Fresh mozzarella, tomato sauce, and basil on our signature thin crust",
+    "price": 16.99,
+    "category": "pizza",
+    "image": "/images/pizza.jpg",
+    "available": true,
+    "preparationTime": "15-20 mins"
+  },
+  {
+    "id": 4,
+    "name": "Crispy Fried Chicken",
+    "description": "Hand-breaded chicken pieces fried to golden perfection, served with honey mustard",
+    "price": 14.99,
+    "category": "chicken",
+    "image": "/images/fried-chicken.jpg",
+    "available": true,
+    "preparationTime": "12-18 mins"
+  },
+  {
+    "id": 5,
+    "name": "Loaded Quesadilla",
+    "description": "Grilled tortilla filled with cheese, peppers, onions, and your choice of protein",
+    "price": 11.99,
+    "category": "mexican",
+    "image": "/images/quesadilla.jpg",
+    "available": true,
+    "preparationTime": "8-12 mins"
+  },
+  {
+    "id": 6,
+    "name": "Street Tacos (3 pack)",
+    "description": "Three authentic street tacos with seasoned meat, onions, cilantro, and lime",
+    "price": 9.99,
+    "category": "mexican",
+    "image": "/images/tacos.jpg",
+    "available": true,
+    "preparationTime": "10-15 mins"
+  },
+  {
+    "id": 7,
+    "name": "Gourmet Club Sandwich",
+    "description": "Triple-layered sandwich with turkey, bacon, lettuce, tomato, and mayo on toasted bread",
+    "price": 13.99,
+    "category": "sandwiches",
+    "image": "/images/sandwich.jpg",
+    "available": true,
+    "preparationTime": "8-12 mins"
+  },
+  {
+    "id": 8,
+    "name": "Glazed Doughnut",
+    "description": "Fresh baked doughnut with sweet glaze, perfect for dessert or coffee break",
+    "price": 3.99,
+    "category": "desserts",
+    "image": "/images/doughnut.jpg",
+    "available": true,
+    "preparationTime": "2-5 mins"
+  },
+  {
+    "id": 9,
+    "name": "Soft Chocolate Cookies (6 pack)",
+    "description": "Warm, soft-baked chocolate chip cookies that melt in your mouth",
+    "price": 7.99,
+    "category": "desserts",
+    "image": "/images/soft-cookies.jpg",
+    "available": true,
+    "preparationTime": "5-10 mins"
+  }
+]
