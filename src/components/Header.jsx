@@ -9,7 +9,7 @@ const Header = memo(({ title, cartCount, onCartClick }) => {
         <button
           onClick={onCartClick}
           aria-label="Open cart"
-          className="bg-orange-500 px-4 py-2 rounded-lg hover:bg-orange-400 transition-colors cursor-pointer"
+          className="relative bg-orange-500 px-4 py-2 rounded-lg hover:bg-orange-400 transition-colors cursor-pointer"
         >
           Cart{" "}
           {cartCount > 0 && (
