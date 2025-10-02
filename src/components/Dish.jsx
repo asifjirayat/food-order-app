@@ -1,4 +1,9 @@
-const Dish = ({ dish }) => {
+import { memo } from "react";
+import { useCart } from "../context/CartContext.jsx";
+
+const Dish = memo(({ dish }) => {
+  const { addItem } = useCart();
+
   return (
     <div
       key={dish.id}
@@ -31,6 +36,7 @@ const Dish = ({ dish }) => {
           <button
             className="bg-orange-500 px-4 py-2 rounded hover:bg-orange-400 transition-colors cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
             disabled={!dish.available}
+            onClick={() => addItem(dish)}
           >
             {dish.available ? "Add to cart" : "Unavailable"}
           </button>
@@ -38,6 +44,6 @@ const Dish = ({ dish }) => {
       </div>
     </div>
   );
-};
+});
 
 export default Dish;
