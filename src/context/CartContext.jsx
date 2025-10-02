@@ -62,7 +62,7 @@ export const CartProvider = ({ children }) => {
   );
 
   const removeItem = useCallback(
-    (id) => dispatch({ type: "REMOVE_ITEM", payload: { id } }),
+    (id) => dispatch({ type: "REMOVE_ITEM", payload: id }),
     []
   );
 
