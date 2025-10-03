@@ -1,6 +1,6 @@
 import { useCart } from "../context/CartContext.jsx";
 
-const CartModal = ({ onClose }) => {
+const CartModal = ({ onClose, onProceedToCheckout }) => {
   const { items, total, removeItem, updateQuantity } = useCart();
 
   const subTotal = total / 1.08;
@@ -109,12 +109,13 @@ const CartModal = ({ onClose }) => {
         <div className="px-6 py-4 flex justify-between gap-3 border-t border-gray-700">
           <button
             onClick={onClose}
-            className="px-4 py-2 rounded border border-gray-700 bg-gray-800 hover:bg-gray-700 transition-colors"
+            className="px-4 py-2 rounded border border-gray-700 bg-gray-800 hover:bg-gray-700 transition-colors cursor-pointer"
           >
             Continue Shopping
           </button>
           <button
-            className="px-4 py-2 rounded bg-orange-500 hover:bg-orange-400 transition-colors text-white"
+            onClick={onProceedToCheckout}
+            className="px-4 py-2 rounded bg-orange-500 hover:bg-orange-400 transition-colors text-white disabled:cursor-not-allowed cursor-pointer"
             disabled={items.length === 0}
             title={items.length === 0 ? "Add items to your cart" : undefined}
           >

@@ -1,7 +1,6 @@
 import { memo } from "react";
 
 const Header = memo(({ title, cartCount, onCartClick }) => {
-  console.log("Header rendered");
   return (
     <header className="bg-gray-900 border-b border-gray-700 px-6 py-4">
       <div className="flex justify-between items-center max-w-7xl mx-auto">

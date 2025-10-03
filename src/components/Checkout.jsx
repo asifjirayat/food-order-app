@@ -2,8 +2,8 @@ import { useActionState } from "react";
 import { submitOrder } from "../actions/submitOrder.js";
 import { useCart } from "../context/CartContext.jsx";
 
-const Checkout = () => {
-  const { items, total } = useCart();
+const Checkout = ({ onSuccess, onCancel }) => {
+  const { items, total, clearCart } = useCart();
 
   // Calculate subtotal and taxes
   const subTotal = total / 1.08 || 0;
@@ -23,14 +23,28 @@ const Checkout = () => {
   };
 
   const [state, formAction, isPending] = useActionState(
-    submitOrder,
+    async (currentState, formData) => {
+      const result = await submitOrder(currentState, formData);
+
+      if (result.success) {
+        clearCart();
+        onSuccess();
+      }
+
+      return result;
+    },
     initialState
   );
 
   return (
     <div className="max-w-5xl mx-auto px-6 py-10">
       <h2 className="text-3xl font-bold mb-8">Checkout</h2>
-
+      <button
+        onClick={onCancel}
+        className="text-gray-400 hover:text-white mb-8 transition-colors"
+      >
+        ← Back to Menu
+      </button>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         {/* Order summary */}
         <div className="lg:col-span-2 space-y-6">
