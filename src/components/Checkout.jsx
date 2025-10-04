@@ -24,7 +24,14 @@ const Checkout = ({ onSuccess, onCancel }) => {
 
   const [state, formAction, isPending] = useActionState(
     async (currentState, formData) => {
-      const result = await submitOrder(currentState, formData);
+      // Pass cart items and total to submitOrder
+      const stateWithCart = {
+        ...currentState,
+        items: items,
+        total: total,
+      };
+
+      const result = await submitOrder(stateWithCart, formData);
 
       if (result.success) {
         clearCart();
@@ -254,7 +261,7 @@ const Checkout = ({ onSuccess, onCancel }) => {
             {isPending ? "Placing Order..." : "Place Order"}
           </button>
 
-          {/* Success / Error Messages */}
+          {/* Success/Error Messages */}
           {state.success && (
             <p className="bg-green-50 border-green-500 rounded p-4 mt-4 text-green-500 text-center">
               {state.message}
@@ -263,6 +270,11 @@ const Checkout = ({ onSuccess, onCancel }) => {
           {!state.success && Object.keys(state.errors).length > 0 && (
             <p className="bg-red-50 border border-red-600 rounded p-4 mt-4 text-red-600 text-center">
               Please fix the errors above.
+            </p>
+          )}
+          {state.errors.submit && (
+            <p className="bg-red-50 border border-red-600 rounded p-4 mt-4 text-red-600 text-center">
+              {state.errors.submit}
             </p>
           )}
         </form>

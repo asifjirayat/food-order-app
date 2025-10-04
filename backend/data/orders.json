@@ -1,1 +1,32 @@
-[]
+[
+  {
+    "id": 1759601563047,
+    "customerInfo": {
+      "fullName": "Mohammadasif Jirayat",
+      "email": "asifjirayat@gmail.com",
+      "phone": "07411451817",
+      "address": "Belgaum"
+    },
+    "cartItems": [
+      {
+        "id": 2,
+        "name": "Crispy Fries",
+        "description": "Golden crispy potato fries with sea salt",
+        "price": 5.99,
+        "category": "sides",
+        "image": "/images/fries.jpg",
+        "available": true,
+        "quantity": 1
+      }
+    ],
+    "totalAmount": 5.99,
+    "payment": {
+      "cardNumber": "234",
+      "expiry": "23",
+      "cvc": "23"
+    },
+    "status": "pending",
+    "orderDate": "2025-10-04T18:12:43.047Z",
+    "estimatedDelivery": "2025-10-04T18:42:43.047Z"
+  }
+]

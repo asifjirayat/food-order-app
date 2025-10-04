@@ -26,10 +26,10 @@ router.get("/", async (req, res) => {
 // POST /api/orders - create new order
 router.post("/", async (req, res) => {
   try {
-    const { customerInfo, cartItems, totalAmount } = req.body;
+    const { customerInfo, cartItems, totalAmount, payment } = req.body;
 
     // Basic validation
-    if (!customerInfo || !cartItems || !totalAmount) {
+    if (!customerInfo || !cartItems || !totalAmount || !payment) {
       return res.status(400).json({
         success: false,
         message: "Missing required order information",
@@ -43,6 +43,7 @@ router.post("/", async (req, res) => {
       customerInfo,
       cartItems,
       totalAmount,
+      payment,
       status: "pending",
       orderDate: new Date().toISOString(),
       estimatedDelivery: new Date(Date.now() + 30 * 60 * 1000).toISOString(),
