@@ -1,3 +1,4 @@
+import { createPortal } from "react-dom";
 import { useCart } from "../context/CartContext.jsx";
 
 const CartModal = ({ onClose, onProceedToCheckout }) => {
@@ -18,13 +19,13 @@ const CartModal = ({ onClose, onProceedToCheckout }) => {
     updateQuantity(id, quantity + 1);
   };
 
-  return (
+  return createPortal(
     <div className="fixed inset-0 z-50 flex items-center justify-center">
       {/* Backdrop */}
       <div className="absolute inset-0 bg-black/70" onClick={onClose}></div>
 
       {/* Modal panel */}
-      <div className="relative w-full max-w-xl mx-4 bg-gray-900 border border-gray-700 rounded-xl shadow-xl">
+      <div className="relative w-full max-w-xl mx-4 bg-gray-900 border border-gray-700 rounded-xl shadow-xl text-white">
         {/* Header */}
         <div className="flex items-center justify-between px-6 py-4 border-b border-gray-700">
           <h3 className="text-lg font-semibold">Your Cart</h3>
@@ -123,7 +124,8 @@ const CartModal = ({ onClose, onProceedToCheckout }) => {
           </button>
         </div>
       </div>
-    </div>
+    </div>,
+    document.getElementById("cart-modal")
   );
 };
 
